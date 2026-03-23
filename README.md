@@ -50,7 +50,7 @@ llm-banker-spark-pipeline/
 ├── Dockerfile                 # Spark 및 Python 환경 구축 레시피
 ├── docker-compose.yml         # Worker 및 Dashboard 다중 컨테이너 오케스트레이션
 ├── requirements.txt           # Python 의존성 패키지 목록
-└── output/                    # Spark 분석 결과물이 저장되는 Data Mart 폴더 (CSV)```
+└── output/                    # Spark 분석 결과물이 저장되는 Data Mart 폴더 (CSV)
 
 
 ---
