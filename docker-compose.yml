@@ -5,8 +5,16 @@ services:
   spark_worker:
     build: .
     volumes:
-      # 핵심 1: 옆 레포지토리(챗봇)의 logs 폴더를 읽어오기
+      #  1: 옆 레포지토리(챗봇)의 logs 폴더를 읽어오기
       - ../llm-banker-rag-chatbot/logs:/app/logs
-      
-      # 핵심 2: 스파크 분석 결과물은 내 레포지토리의 output 폴더에 저장하기
+      #  2: 스파크 분석 결과물은 내 레포지토리의 output 폴더에 저장하기
       - ./output:/app/output
+
+  admin_dashboard:
+    build: .
+    ports:
+      - "8502:8502"  # 챗봇(8501)과 겹치지 않게 8502번 포트 사용
+    volumes:
+      - ./output:/app/output  # 스파크가 만든 결과를 읽어올 수 있게 연결
+    command: ["streamlit", "run", "admin_dashboard.py", "--server.port=8502", "--server.address=0.0.0.0"]
+    
