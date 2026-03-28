@@ -1,6 +1,6 @@
 # FinRAG Spark Data Pipeline & Admin Dashboard
 
-본 프로젝트는 [LLM Banker RAG Chatbot](기존 레포 링크 추가)에서 발생하는 대규모 사용자 대화 로그를 처리하고 시각화하는 **빅데이터 파이프라인 및 비즈니스 인텔리전스(BI) 대시보드**입니다.
+본 프로젝트는 [LLM Banker RAG Chatbot](https://github.com/skidroww/llm-banker-rag-chatbot)에서 생성되는 대규모 사용자 대화 로그를 처리하고 시각화하는 **빅데이터 파이프라인 및 비즈니스 인텔리전스(BI) 대시보드**입니다.
 
 분산 파일 시스템 환경을 가정하여 일일 단위로 쌓이는 대량의 JSONL 로그 파일을 **Apache Spark**로 병렬 처리합니다. 가공된 데이터는 여러 개의 데이터 마트(Data Mart)로 분리 저장되며, **Streamlit** 기반의 관리자 대시보드에서 실시간 통계 차트로 시각화됩니다.
 
